@@ -45,7 +45,7 @@ const ImpactPulseChart = () => {
   ];
 
   return (
-    <div ref={chartContainerRef} className='w-full'>
+    <div ref={chartContainerRef} className='w-[100%]'>
       <ComposedChart width={chartWidth} height={300} data={data}>
         <XAxis dataKey="name" tick={{ fontSize: 12 }} />
         <YAxis tick={{ fontSize: 12 }} />
