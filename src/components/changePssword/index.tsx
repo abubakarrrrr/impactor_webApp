@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaArrowLeft } from 'react-icons/fa'
 import ImageComponent from '../ImageComponent'
 import Button from '../button'
 import { useForgotPasswordMutation } from '@/redux/services/Auth/authApi'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import LoadingAnimation from '../Loading'
 
 const ChangePassword = ({setSelected, userCreatedId}:any) => {
   console.log(userCreatedId,"id")
   
+  const [isLoading, setIsLoading]=useState(false)
   const [forgotPassword]=useForgotPasswordMutation();
   const {register,watch, formState:{errors}, handleSubmit}= useForm();
    const newPassword= watch("newPassword")
 
    const onSubmit = async (data:any)=>{
+    setIsloading(true)
     console.log(data, "data")
     let payload={
       "userId":userCreatedId,
@@ -24,9 +27,11 @@ const ChangePassword = ({setSelected, userCreatedId}:any) => {
       if(response.data){
          toast.success(response.data.message);
          setSelected(1)
+         setIsloading(false)
       }
       else{
         toast.error(response.error.data.message);
+        setIsloading(false)
       }
     }catch(error){
       toast.error("not change")

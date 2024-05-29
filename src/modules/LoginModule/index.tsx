@@ -9,12 +9,13 @@ import { useState } from 'react';
 import ForgotPassword from '@/components/fotgotPassword';
 import ChangePassword from '@/components/changePssword';
 import OtpComponent from '@/components/OTP Component';
-import { useLoginMutation, useSignUpVerifyMutation, useResendOtpMutation } from '@/redux/services/Auth/authApi';
+import { useLoginMutation, useSignUpVerifyMutation, useResendOtpMutation, setUser } from '@/redux/services/Auth/authApi';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import Cookies from "js-cookie";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import LoadingAnimation from '@/components/Loading';
 
 const LoginModule = () => {
   const [login] = useLoginMutation();
@@ -22,6 +23,8 @@ const LoginModule = () => {
   const [resendOtp]= useResendOtpMutation();
   const router = useRouter();
   const authToken= Cookies.get("token")
+
+  const [isLoading , setIsloading]= useState(false)
 
   const { handleSubmit, register, watch, formState: { errors } } = useForm();
   const [selected, setSelected] = useState(1)
@@ -33,6 +36,7 @@ const LoginModule = () => {
   const userEmail= watch("email")
 
   const onSubmit = async (data: any) => {
+    setIsloading(true)
     let payload = {
       email: data.email,
       password: data.password,
@@ -43,13 +47,14 @@ const LoginModule = () => {
       const response = await login({ data: payload });
       if (response.data) {
         toast.success(response.data.message)
+        setIsloading(false)
        
-
         Cookies.set('token', response?.data?.data?.authToken, { expires: 365 * 10 });
         router.push('/')
       }
       else {
         toast.error(response.error.data.message)
+        setIsloading(false)
       }
 
     } catch (error) {
@@ -60,12 +65,14 @@ const LoginModule = () => {
 
   const verify = async (e: any) => {
     e.preventDefault();
+    setIsloading(true)
     if (pin.length === 5) {
       const payload = { token: pin };
       try {
         const response = await signUpVerify({ data: payload });
         if (response.data) {
           toast.success(response.data.message);
+          setIsloading(false)
           if (isDelete) {
             setSelected(1);
           } else {
@@ -75,6 +82,7 @@ const LoginModule = () => {
           }
         } else {
           toast.error(response.error.data.message);
+          setIsloading(false)
         }
       } catch (error) {
         toast.error("Verification failed. Please try again.");
@@ -89,9 +97,9 @@ const LoginModule = () => {
   
 
   const reSendOtp=async (e:any)=>{
-    
+    setIsloading(true)
     e.preventDefault();
-
+    setIsloading(true)
    let payload={
     email: userEmail,
    }
@@ -99,8 +107,12 @@ const LoginModule = () => {
       const response = await resendOtp({data:payload})
      if(response.data){
       toast.success(`${response.data.message}`)
+      setIsloading(false)
+      
      }else{
       toast.error(`${response.error.data.message}`)
+      setIsloading(false)
+      
      }
     }catch(error){
 
@@ -122,10 +134,15 @@ const LoginModule = () => {
     window.open('https://play.google.com/store/apps/details?id=com.impact.meter', '_blank');
   }
   return (
-
+   <>
+      {isLoading && (
+        <LoadingAnimation />
+      )
+    }
+   
     <div className='lg:flex relative'>
       <div className="h-[100vh] w-[50%] lg:flex hidden lg:fixed top-0 left-0 ">
-        <img src="images/mainimageold.png" alt="sidebarimage" className=" rounded  h-full w-full  aspect-square  object-cover" />
+        <img src="images/mainimage333.png" alt="sidebarimage" className=" rounded  h-full w-full  aspect-square  object-cover" />
       </div>
 
 
@@ -229,6 +246,7 @@ const LoginModule = () => {
 
       </div>
     </div>
+    </>
   );
 };
 

@@ -8,8 +8,10 @@ import { Authroutes } from '@/components/Authroutes';
 import { useRouter } from 'next/router';
 import Authguard from '@/components/Authguard';
 import AuthLayout from '@/components/AuthLayout';
-import Navbar from '@/components/navbar';
-import Sidebar from '@/components/sidebar';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Dashboard from '@/components/Dashboard';
+
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -24,8 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
           ) : (
             
             <Authguard>
-              <Navbar />
-               <Sidebar />
+               <Dashboard />
               <Component {...pageProps} />
               
             </Authguard>

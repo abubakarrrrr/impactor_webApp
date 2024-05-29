@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="408" height="235" viewBox="0 0 408 235">
+  <defs>
+    <filter id="Rectangle_4182" x="0" y="0" width="408" height="235" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_36621" data-name="Group 36621" transform="translate(-1016 -372)">
+    <g transform="matrix(1, 0, 0, 1, 1016, 372)" filter="url(#Rectangle_4182)">
+      <rect id="Rectangle_4182-2" data-name="Rectangle 4182" width="390" height="217" rx="5" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="Group_19255" data-name="Group 19255" transform="translate(1048 400.045)">
+      <line id="Line_94" data-name="Line 94" x2="316.647" transform="translate(20.803 148.963)" fill="none" stroke="#363c40" stroke-width="1"/>
+      <line id="Line_133" data-name="Line 133" x2="0.55" y2="142.916" transform="translate(20.803 6.046)" fill="none" stroke="#363c40" stroke-width="1"/>
+      <text id="_0" data-name="0" transform="translate(3 145.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">0</tspan></text>
+      <text id="_10" data-name="10" transform="translate(0 122.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">10</tspan></text>
+      <text id="_20" data-name="20" transform="translate(0 94.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">20</tspan></text>
+      <text id="_30" data-name="30" transform="translate(0 65.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">30</tspan></text>
+      <text id="_40" data-name="40" transform="translate(0 37.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">40</tspan></text>
+      <text id="_50" data-name="50" transform="translate(0 8.955)" fill="#363c40" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">50</tspan></text>
+      <line id="Line_120" data-name="Line 120" x2="316.647" transform="translate(21.353 63.213)" fill="none" stroke="#363c40" stroke-width="0.5" opacity="0.3"/>
+      <line id="Line_119" data-name="Line 119" x2="316.647" transform="translate(21.353 91.796)" fill="none" stroke="#363c40" stroke-width="0.5" opacity="0.3"/>
+      <line id="Line_118" data-name="Line 118" x2="316.647" transform="translate(21.353 120.38)" fill="none" stroke="#363c40" stroke-width="0.5" opacity="0.3"/>
+      <line id="Line_121" data-name="Line 121" x2="316.647" transform="translate(21.353 34.63)" fill="none" stroke="#363c40" stroke-width="0.5" opacity="0.3"/>
+      <line id="Line_122" data-name="Line 122" x2="316.647" transform="translate(21.353 6.046)" fill="none" stroke="#363c40" stroke-width="0.5" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

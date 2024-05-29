@@ -49,23 +49,10 @@ useEffect(()=>{
     <div className='  w-[90%] lg:w-[70%]  m-auto grid  bg-white rounded place-items-center '>
     <form className=' w-[90%] m-auto' onSubmit={handleSubmit(onSubmit)}>
     <div className='flex items-center mt-5'>
-          {
-          UserData ?
-          <>
-          <FaArrowLeft className='m-1' onClick={()=>setSelected(1)} />
+    <FaArrowLeft className='m-1' onClick={()=>setSelected(1)} />
         
-      <h1 className='ml-2 text-xl font-semibold'>Change Password</h1>
-      </>
-      :
-      <>
-      <FaArrowLeft className='m-1' onClick={()=>setSelected(1)} />
+        <h1 className='ml-2 text-xl font-semibold'>Change Password</h1> 
         
-      <h1 className='ml-2 text-xl font-semibold'>Change Password</h1>
-      </>
-          }    
-          <FaArrowLeft className='m-1' onClick={()=>setSelected(1)} />
-        
-      <h1 className='ml-2 text-xl font-semibold'>Change Password</h1>
     </div>
       <div className=' grid place-items-center'>
       <ImageComponent img="images/forgotimg.png" className="mt-5" />

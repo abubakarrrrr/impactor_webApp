@@ -14,6 +14,7 @@ import { useResendOtpMutation } from '@/redux/services/Auth/authApi';
 import { toast } from 'react-toastify';
 import OtpComponent from '@/components/OTP Component';
 import Cookies from 'js-cookie';
+import LoadingAnimation from '@/components/Loading';
 
 
 
@@ -24,6 +25,7 @@ const SignUpModule = () => {
   const [resendOtp]=useResendOtpMutation();
   const [createUserId, setCreateUserId]=useState(null);
   const [pin, setPin]= useState("")
+  const [isLoading, setIsloading]= useState(false)
 
   const { register, getValues, handleSubmit, watch, formState: { errors } } = useForm();
   console.log(errors, "error")
@@ -38,6 +40,7 @@ const SignUpModule = () => {
   
 
   const onSubmit = async (data:any) => {
+    setIsloading(true)
     const payload = {
       userName: data.userName,
       gender: data.gender,
@@ -56,8 +59,10 @@ const SignUpModule = () => {
       if (response.data) {
         setCreateUserId(response.data.userId);
         toast.success(`${response.data.message} `);
+        setIsloading(false)
       } else {
         toast.error(`${response.error.data.message}`);
+        setIsloading(false)
       }
     } catch (error) {
       toast.error("An error occurred during sign-up.");
@@ -67,7 +72,7 @@ const SignUpModule = () => {
 
   const verify = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+    setIsloading(true)
     if (pin.length === 5) {
       const payload = { 
         userId: createUserId,
@@ -79,6 +84,7 @@ const SignUpModule = () => {
         if (response.data) {
           Router.push("/login");
           toast.success(`${response.data.message}`);
+          setIsloading(false)
         } else {
           toast.error(response.error.data.message || "Verification failed");
         }
@@ -95,7 +101,7 @@ const SignUpModule = () => {
   const reSendOtp=async (e:any)=>{
     
     e.preventDefault();
-
+    setIsloading(true)
    let payload={
     email: userEmail,
    }
@@ -103,8 +109,10 @@ const SignUpModule = () => {
       const response = await resendOtp({data:payload})
      if(response.data){
       toast.success(`${response.data.message}`)
+      setIsloading(false)
      }else{
       toast.error(`${response.error.data.message}`)
+      setIsloading(false)
      }
     }catch(error){
 
@@ -128,7 +136,7 @@ const androidUrl = () => {
   return (
     <div className='lg:flex relative'>
       <div className="h-[100vh] w-[50%] lg:flex hidden lg:fixed top-0 left-0">
-        <img src="images/mainimageold.png" alt="sidebarimage" className="object-cover    rounded h-full w-full" />
+        <img src="images/mainimage333.png" alt="sidebarimage" className="object-cover    rounded h-full w-full" />
       </div>
       {
         createUserId ?

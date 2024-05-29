@@ -1,0 +1,32 @@
+<svg id="Group_20932" data-name="Group 20932" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144.942" height="150.345" viewBox="0 0 144.942 150.345">
+  <defs>
+    <filter id="Ellipse_661" x="7.729" y="20.919" width="129.426" height="129.426" filterUnits="userSpaceOnUse">
+      <feOffset dy="13" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Direct_Giving" data-name="Direct Giving" transform="matrix(-0.259, -0.966, 0.966, -0.259, 30.63, 144.942)" fill="none" stroke="#94999c" stroke-linecap="round" stroke-width="12" stroke-dasharray="130 1000">
+    <circle cx="59.172" cy="59.172" r="59.172" stroke="none"/>
+    <circle cx="59.172" cy="59.172" r="53.172" fill="none"/>
+  </g>
+  <g id="Health" transform="translate(131.644 13.3) rotate(90)" fill="none" stroke="#94999c" stroke-linecap="round" stroke-width="12" stroke-dasharray="168 1000">
+    <circle cx="59.172" cy="59.172" r="59.172" stroke="none"/>
+    <circle cx="59.172" cy="59.172" r="53.172" fill="none"/>
+  </g>
+  <g id="Grocery" transform="matrix(0.966, -0.259, 0.259, 0.966, 0, 30.63)" fill="none" stroke="#94999c" stroke-linecap="round" stroke-width="12" stroke-dasharray="144 1000">
+    <circle cx="59.172" cy="59.172" r="59.172" stroke="none"/>
+    <circle cx="59.172" cy="59.172" r="53.172" fill="none"/>
+  </g>
+  <g id="Circle" transform="translate(31.955 31.955)">
+    <g transform="matrix(1, 0, 0, 1, -31.96, -31.95)" filter="url(#Ellipse_661)">
+      <circle id="Ellipse_661-2" data-name="Ellipse 661" cx="40.713" cy="40.713" r="40.713" transform="translate(31.73 31.92)" fill="#fff"/>
+    </g>
+    <g id="Group_20931" data-name="Group 20931" transform="translate(17.774 26.965)">
+      <text id="My_Impact" data-name="My Impact" transform="translate(0 9)" fill="#365495" font-size="8" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">My Impact</tspan></text>
+      <text id="_0_PKR" data-name="0 PKR" transform="translate(22.112 24.829)" fill="#333" font-size="9" font-family="SFProDisplay-Bold, SF Pro Display" font-weight="700"><tspan x="-12" y="0">0 PKR</tspan></text>
+    </g>
+  </g>
+</svg>

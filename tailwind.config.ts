@@ -12,6 +12,9 @@ module.exports = {
         "primary":"#365394",
         "btn":"#365495",
         "danger":"#D83564",
+        'dim-black-start': '#4b4b4b',
+        'dim-black-middle': '#3a3a3a',
+        'dim-black-end': '#2a2a2a'
       }
         
     },
@@ -19,7 +22,9 @@ module.exports = {
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
   
 };
 
