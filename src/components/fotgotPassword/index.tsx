@@ -35,15 +35,15 @@ const ForgotPassword = ({setSelected}:any) => {
  }
 
  
-useEffect(()=>{
-  if (UserData){
+// useEffect(()=>{
+//   if (UserData){
 
-    setValue('email',UserData.email)
-    setIsDisable(true)
+//     setValue('email',UserData.email)
+//     setIsDisable(true)
 
-  }
+//   }
 
-},[UserData])
+// },[UserData])
 
   return (
     <div className='  w-[90%] lg:w-[70%]  m-auto grid  bg-white rounded place-items-center '>

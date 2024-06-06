@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { sidebar_data } from './Sidebar_data';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
+
 import { useSelector } from 'react-redux';
 import { useGetUserProfileQuery } from '@/redux/services/Auth/authApi';
 
@@ -12,7 +12,7 @@ import { useGetUserProfileQuery } from '@/redux/services/Auth/authApi';
 const Sidebar_ui = () => {
   const { data: userProfileData, error, isLoading } = useGetUserProfileQuery();
 
-  // console.log(userProfileData.data.email,"dataaa")
+  console.log(userProfileData,"dataaa")
   
   
 const UserData = useSelector((state: any) => state?.authData?.user);
